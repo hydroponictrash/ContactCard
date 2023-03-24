@@ -15,3 +15,8 @@ Find me pretty much anywhere by looking for @HydroponicTrash
 - I tend to drink whiskey neat, but can go for any drink. Beer wise I love stouts and coffee flavored beers. 
 - Cigars are always good with me. I like Drew Estates Java the most. 
 - If you know where to get sour gummy sharks let me know. 
+
+## Info
+[What is solarpunk?](https://www.youtube.com/watch?v=hHI61GHNGJM)
+[What is Degrowth?](https://www.youtube.com/watch?v=omcUaD8pxaY)
+[What is Permacomputing?](https://permacomputing.net/)
