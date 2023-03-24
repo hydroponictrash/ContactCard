@@ -17,7 +17,7 @@ Find me pretty much anywhere by looking for @HydroponicTrash
 - If you know where to get sour gummy sharks let me know. 
 
 ## Info
-[What is solarpunk?](https://www.youtube.com/watch?v=hHI61GHNGJM)
+[What is Solarpunk?](https://www.youtube.com/watch?v=hHI61GHNGJM)
 
 [What is Degrowth?](https://www.youtube.com/watch?v=omcUaD8pxaY)
 
