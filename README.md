@@ -18,5 +18,7 @@ Find me pretty much anywhere by looking for @HydroponicTrash
 
 ## Info
 [What is solarpunk?](https://www.youtube.com/watch?v=hHI61GHNGJM)
+
 [What is Degrowth?](https://www.youtube.com/watch?v=omcUaD8pxaY)
+
 [What is Permacomputing?](https://permacomputing.net/)
