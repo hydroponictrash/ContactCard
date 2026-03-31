@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>HydroponicTrash Banner</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #020617;
+    }
+    .banner {
+      position: relative;
+      color: #00ff9d;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      text-shadow: 0 0 12px rgba(0, 255, 157, 0.75);
+      padding: 1rem 1.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 255, 157, 0.5);
+      box-shadow:
+        0 0 20px rgba(0, 255, 157, 0.4),
+        0 0 40px rgba(0, 255, 157, 0.2);
+      font-size: 32px;
+    }
+    .banner span {
+      display: inline-block;
+      animation: wave 1.4s ease-in-out infinite;
+      animation-delay: calc(var(--i) * 0.08s);
+    }
+    @keyframes wave {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50%      { transform: translateY(-10px) scale(1.05); }
+    }
+  </style>
+</head>
+<body>
+  <div id="banner" class="banner"></div>
+
+  <script type="module">
+    import {
+      prepareWithSegments,
+      layoutWithLines,
+    } from "https://cdn.skypack.dev/@chenglou/pretext";
+
+    const text = "HydroponicTrash";
+    const font = "32px system-ui";
+    const width = 600;
+    const lineHeight = 40;
+
+    const prepared = prepareWithSegments(text, font);
+    const { lines } = layoutWithLines(prepared, width, lineHeight);
+
+    const banner = document.getElementById("banner");
+
+    lines.forEach((line) => {
+      [...line.text].forEach((ch, idx) => {
+        const span = document.createElement("span");
+        span.textContent = ch;
+        span.style.setProperty("--i", idx);
+        banner.appendChild(span);
+      });
+    });
+  </script>
+</body>
+</html>
