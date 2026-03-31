@@ -2,67 +2,75 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>HydroponicTrash Banner</title>
+  <title>HydroponicTrash Dynamic Layout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
+    :root {
+      color-scheme: dark;
+    }
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
-      background: #020617;
-    }
-    .banner {
-      position: relative;
-      color: #00ff9d;
+      background: radial-gradient(circle at top, #020617, #000000 65%);
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      text-shadow: 0 0 12px rgba(0, 255, 157, 0.75);
-      padding: 1rem 1.8rem;
+    }
+    #root {
+      position: relative;
+      width: min(960px, 100vw - 32px);
+      height: min(540px, 100vh - 32px);
+      border-radius: 24px;
+      background: rgba(15, 23, 42, 0.95);
+      box-shadow:
+        0 0 40px rgba(15, 23, 42, 0.9),
+        0 0 80px rgba(0, 255, 157, 0.35);
+      overflow: hidden;
+      padding: 24px;
+    }
+
+    .block {
+      position: absolute;
+      color: #e5e7eb;
+    }
+
+    .headline-char {
+      display: inline-block;
+      color: #00ff9d;
+      text-shadow: 0 0 12px rgba(0, 255, 157, 0.8);
+      animation: wave 1.4s ease-in-out infinite;
+      animation-delay: calc(var(--i) * 0.06s);
+    }
+
+    .body-line {
+      white-space: pre;
+    }
+
+    .pill {
+      position: absolute;
+      right: 24px;
+      top: 24px;
+      padding: 0.35rem 0.9rem;
       border-radius: 999px;
       border: 1px solid rgba(0, 255, 157, 0.5);
-      box-shadow:
-        0 0 20px rgba(0, 255, 157, 0.4),
-        0 0 40px rgba(0, 255, 157, 0.2);
-      font-size: 32px;
+      color: #a5b4fc;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background: linear-gradient(120deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.2));
+      backdrop-filter: blur(12px);
     }
-    .banner span {
-      display: inline-block;
-      animation: wave 1.4s ease-in-out infinite;
-      animation-delay: calc(var(--i) * 0.08s);
-    }
+
     @keyframes wave {
       0%, 100% { transform: translateY(0) scale(1); }
-      50%      { transform: translateY(-10px) scale(1.05); }
+      50%      { transform: translateY(-8px) scale(1.05); }
     }
-  </style>
-</head>
-<body>
-  <div id="banner" class="banner"></div>
 
-  <script type="module">
-    import {
-      prepareWithSegments,
-      layoutWithLines,
-    } from "https://cdn.skypack.dev/@chenglou/pretext";
-
-    const text = "HydroponicTrash";
-    const font = "32px system-ui";
-    const width = 600;
-    const lineHeight = 40;
-
-    const prepared = prepareWithSegments(text, font);
-    const { lines } = layoutWithLines(prepared, width, lineHeight);
-
-    const banner = document.getElementById("banner");
-
-    lines.forEach((line) => {
-      [...line.text].forEach((ch, idx) => {
-        const span = document.createElement("span");
-        span.textContent = ch;
-        span.style.setProperty("--i", idx);
-        banner.appendChild(span);
-      });
-    });
-  </script>
-</body>
-</html>
+    .badge {
+      position: absolute;
+      left: 24px;
+      
